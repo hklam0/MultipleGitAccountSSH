@@ -1,4 +1,4 @@
-# How to manage multiple git account and their respective SSH keys.
+# How to manage multiple git accounts and their respective SSH keys.
 
 1. Goto **~/.ssh**
 
@@ -18,4 +18,37 @@
     >
     >        ssh-keygen -t rsa -b 4096 -C "your_github_account_email@domain.com" -f "your_github_username"
 
-    
+4. By now, you'll have a key pairs of "your_github_username" and "your_github_username.pub"
+
+5. Repeat if you need more key pairs for every other Github account(s).
+
+6. Open config file in ~/.ssh
+
+        open config
+
+    >You may create one if you don't have that by:
+    >
+    >       touch config
+
+7. Edit the config file with the following details:
+
+        ## Account 1
+        Host github.com-your_github_username1
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/your_github_username1    
+
+        ## Account 2
+        Host github.com-your_github_username2
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/your_github_username2
+
+        > If I have github username of hklam0, then I change code as:
+        >        ## Account 1
+        >        Host github.com-your_github_hklam0
+        >        HostName github.com
+        >        User git
+        >        IdentityFile ~/.ssh/your_github_hklam0
+        >
+        > Note, here I save the key pair as hklam0 and hklam0.pub
