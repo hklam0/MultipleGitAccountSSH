@@ -20,9 +20,21 @@
 
 4. By now, you'll have a key pairs of "your_github_username" and "your_github_username.pub"
 
-5. Repeat if you need more key pairs for every other Github account(s).
+    >Run ls and it will show "your_github_username" and "your_github_username.pub"
+        
 
-6. Open config file in ~/.ssh
+5. Repeat the following process if you have more than one account and you will have files like the following:
+
+        ~/.ssh/your_github_username1
+        ~/.ssh/your_github_username2
+
+6. Add those keys in ssh key-chain:
+
+        ssh-add your_github_username1
+        ssh-add your_github_username2
+
+
+7. Open config file in ~/.ssh
 
         open config
 
@@ -30,7 +42,7 @@
     >
     >       touch config
 
-7. Edit the config file with the following details:
+8. Edit the config file with the following details:
 
         ## Account 1
         Host github.com-your_github_username1
@@ -53,3 +65,11 @@
     >        IdentityFile ~/.ssh/your_github_hklam0
     >
     > Note, here I save the key pair as hklam0 and hklam0.pub
+
+9. Copy those key .pub keys to your respective github accounts
+
+        pbcopy < ~/.ssh/your_github_username1.pub
+        
+    >Open up the settings in your github account, click new SSH Key/Add SSH Key, In the "Key" field, paste your public key 
+
+    You may refer to [Add SSH-Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) for more details
