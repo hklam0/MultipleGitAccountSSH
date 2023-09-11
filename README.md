@@ -45,10 +45,11 @@
         IdentityFile ~/.ssh/your_github_username2
 
 > If I have github username of hklam0, then I change code as:
->       ## Account 1
->       Host github.com-your_github_hklam0
->       HostName github.com
->       User git
->       IdentityFile ~/.ssh/your_github_hklam0
+>
+>        ## Account 1
+>        Host github.com-your_github_hklam0
+>        HostName github.com
+>        User git
+>        IdentityFile ~/.ssh/your_github_hklam0
 >
 > Note, here I save the key pair as hklam0 and hklam0.pub
